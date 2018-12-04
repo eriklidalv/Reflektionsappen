@@ -1,0 +1,35 @@
+@import '../base/settings';
+
+/* futura-regular */
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Futura'), local('Futura-Regular'),
+        url('../assets/fonts/37B3B9_0_0.eot') format('eot'),
+        url('../assets/fonts/37B3B9_0_0.ttf') format('ttf'),
+        url('../assets/fonts/37B3B9_0_0.woff') format('woff'), 
+        url('../assets/fonts/37B3B9_0_0.woff2') format('woff2'); 
+  }
+  /* futura-italic */
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Futura Light'), local('Futura-Light'),
+        url('../assets/fonts/37B3B9_1_0.eot') format('eot'),
+        url('../assets/fonts/37B3B9_1_0.ttf') format('ttf'),
+        url('../assets/fonts/37B3B9_1_0.woff') format('woff'), 
+        url('../assets/fonts/37B3B9_1_0.woff2') format('woff2'); 
+  }
+  /* futura-bold */
+@font-face {
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Futura Bold'), local('Futura-Bold'),
+        url('../assets/fonts/37B3B9_2_0.eot') format('eot'),
+        url('../assets/fonts/37B3B9_2_0.ttf') format('ttf'),
+        url('../assets/fonts/37B3B9_2_0.woff') format('woff'),
+        url('../assets/fonts/37B3B9_2_0.woff2') format('woff2');
+  }

@@ -1,0 +1,33 @@
+.button-full{
+    background-color:$light-green;
+    border:none;
+    border-radius: 3rem;
+    box-shadow: 0 0.3rem 1.1rem -0.4rem $light-blue;
+    color: white;
+    font-size:$font-size-small;
+    font-weight: 500;
+    font-stretch: normal;
+    height: 6rem;
+    line-height: normal;
+    letter-spacing: 0.04rem;
+    padding:$xs-size;
+    width:100%;
+    font-family: 'Futura';
+    outline: none;   
+}
+.button-hollow{
+    @extend .button-full;
+    background-color:white;
+    border:solid 0.2rem $light-green;
+    color: $light-green;
+    margin-top: 3.1rem;
+}
+.forgot-password-container{
+    text-align: center;
+    margin-top:2.5rem;
+}
+.link-forgot-password{
+    color: $light-green;
+    font-weight: 500;
+    font-size:$font-size-small;
+}

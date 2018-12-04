@@ -1,0 +1,15 @@
+.horizontal-line{ 
+    border-bottom: 0.1rem solid $fade-grey;
+    line-height: 0.1em;
+    margin: 2rem 0 2rem; 
+    text-align: center; 
+    width: 100%;
+ } 
+ 
+ .horizontal-line-text{ 
+     background:#fff; 
+     font-size:$font-size-small;
+     font-weight: 500;
+     padding:0 1rem; 
+     letter-spacing: 0.04rem;
+ }

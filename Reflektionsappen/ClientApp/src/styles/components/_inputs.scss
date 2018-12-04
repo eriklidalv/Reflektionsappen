@@ -1,0 +1,41 @@
+.login-input{
+    background-color:$fade-green;
+    border:none;
+    border-radius: 0.8rem;
+    color: $light-grey;
+    font-size:$font-size-login-input;
+    font-stretch: normal;
+    font-weight: 300;
+    height: 7rem;
+    line-height: 1.44;
+    letter-spacing: 0.05rem;
+    margin-top: 2.2rem;
+    padding:$xs-size;
+    padding-left:2.4rem;
+    width:100%;
+    font-family: 'Futura';
+    outline: none;   
+}
+.login-input-error{
+    @extend .login-input;
+    background-color:$fade-pink;
+}
+
+.input-checkbox{
+    margin-top:4rem;
+    position:absolute;
+    right:4rem;
+}
+
+.login-input:focus{
+    box-shadow: 0 0 5px $light-green;  
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 50px $fade-green inset;
+    -webkit-text-fill-color:$light-grey;
+}
+

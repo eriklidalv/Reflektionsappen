@@ -1,0 +1,24 @@
+//to remove all the extra padding and border added automatically to components
+*{
+    box-sizing:border-box;
+  }
+  html{
+    font-size:62.5%;
+  }
+  
+  body{
+    color: $light-grey;
+    font-family: 'Futura', Helvetica, sans-serif;
+    font-size:$m-size;
+    line-height: 1.6;
+  }
+  button{
+    cursor:pointer;
+  }
+  
+  button:disabled{
+    cursor:default;
+  }
+  .is-active{
+    font-weight:bold;
+  }

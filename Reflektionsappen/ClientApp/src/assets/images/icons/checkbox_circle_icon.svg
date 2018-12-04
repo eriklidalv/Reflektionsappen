@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Checkbox_circle_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Checkbox_circle_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add">
+            <g id="avatar" transform="translate(17.500000, 17.500000) rotate(90.000000) translate(-17.500000, -17.500000) ">
+                <g id="Group-4">
+                    <rect id="background" fill="#97bf0c" x="0" y="0" width="35" height="35" rx="17.5"></rect>
+                    <path d="M13.089315,19.3193388 L22.5123919,19.3193388 C23.0328141,19.3193388 23.4546996,19.7412244 23.4546996,20.2616465 C23.4546996,20.7820687 23.0328141,21.2039542 22.5123919,21.2039542 L12.1470073,21.2039542 C11.6265852,21.2039542 11.2046996,20.7820687 11.2046996,20.2616465 C11.2046996,20.2503813 11.2048973,20.2391623 11.2052894,20.2279927 C11.2048973,20.2168231 11.2046996,20.205604 11.2046996,20.1943388 L11.2046996,15.0789542 C11.2046996,14.558532 11.6265852,14.1366465 12.1470073,14.1366465 C12.6674295,14.1366465 13.089315,14.558532 13.089315,15.0789542 L13.089315,19.3193388 Z" id="Combined-Shape" fill="#FFFFFF" transform="translate(17.329700, 17.670300) scale(-1, -1) rotate(45.000000) translate(-17.329700, -17.670300) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
