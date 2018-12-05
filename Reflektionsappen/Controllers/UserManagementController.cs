@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Reflektionsappen.Identity.Models;
 using Reflektionsappen.Models.Requests;
 
 namespace Reflektionsappen.Controllers
@@ -10,12 +12,33 @@ namespace Reflektionsappen.Controllers
     [Route("api/[controller]")]
     public class UserManagementController : Controller
     {
-        [HttpPost("[action]")]
-        public async Task<ActionResult<bool>> Login([FromBody] LoginRequest request)
+        private readonly UserManager<ApplicationUser> userManager;
+
+        public UserManagementController(UserManager<ApplicationUser> userManager)
         {
-            return true;
+            this.userManager = userManager;
         }
 
+        [HttpPost("[action]")]
+        public async Task<ActionResult<bool>> Create([FromBody] CreateUserRequest request)
+        {
+            var result = await userManager.CreateAsync(
+                new ApplicationUser
+                {
+                    UserName = request.Email,
+                    Email = request.Email
+                }, request.Password);
+
+            if (result.Succeeded)
+            {
+                return Ok(true);
+            }
+
+            return BadRequest(false);
+        }
+
+
+        //Temp to test GET
         private static readonly string[] Summaries = {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
