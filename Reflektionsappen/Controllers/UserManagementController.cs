@@ -26,16 +26,34 @@ namespace Reflektionsappen.Controllers
                 new ApplicationUser
                 {
                     UserName = request.Email,
-                    Email = request.Email
+                    Email = request.Email,
+                    EmailConfirmed = false
                 }, request.Password);
 
-            if (result.Succeeded)
+            if (!result.Succeeded)
             {
-                return Ok(true);
+                return BadRequest(false);
             }
 
-            return BadRequest(false);
+            //var user = await userManager.FindByNameAsync(request.Email);
+            //var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+            // TODO mail token
+
+            return Ok(true);
+
         }
+
+        //[HttpPost("[action]")]
+        //public async Task<ActionResult<bool>> Confirm([FromBody] string token)
+        //{
+        //    var result = await userManager.ConfirmEmailAsync().CreateAsync(
+        //        new ApplicationUser
+        //        {
+        //            UserName = request.Email,
+        //            Email = request.Email,
+        //            EmailConfirmed = false
+        //        }, request.Password);
+        //}
 
 
         //Temp to test GET
