@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Reflektionsappen.Identity;
+using Reflektionsappen.Identity.Models;
 
 namespace Reflektionsappen
 {
@@ -13,6 +15,11 @@ namespace Reflektionsappen
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            using (var context = new IdentityContext(configuration))
+            {
+                context.Database.EnsureCreated();
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -20,6 +27,14 @@ namespace Reflektionsappen
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<IdentityContext>();
+
+            services.AddIdentityCore<ApplicationUser>(options => { });
+            new IdentityBuilder(typeof(ApplicationUser), typeof(IdentityRole), services)
+                .AddRoleManager<RoleManager<IdentityRole>>()
+                .AddSignInManager<SignInManager<ApplicationUser>>()
+                .AddEntityFrameworkStores<IdentityContext>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the React files will be served from this directory
@@ -45,6 +60,8 @@ namespace Reflektionsappen
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
