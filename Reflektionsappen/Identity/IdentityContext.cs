@@ -14,7 +14,10 @@ namespace Reflektionsappen.Identity
             this.configuration = configuration;
         }
 
-        protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+        protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = configuration.GetConnectionString("DefaultConnection").Replace("{CurrentDirectory}", System.Environment.CurrentDirectory);
+            optionsBuilder.UseSqlite(connectionString);
+        }
     }
 }
