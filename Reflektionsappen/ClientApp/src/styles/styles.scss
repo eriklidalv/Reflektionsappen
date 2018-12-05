@@ -2,9 +2,16 @@
 @import './base/base';
 @import './components/buttons';
 @import './components/content-layout';
-@import './components/card-layout';
+//@import './components/card-layout';
 @import './components/horizontal-line';
 @import './components/inputs';
 @import './components/logo';
 @import './components/loader';
 @import './components/typography';
+
+/* Sheets for ReflectionStart */
+@import './components/photo-mia';
+@import './components/reflection-start-header';
+@import './components/reflection-start-message';
+@import './components/reflection-start-button';
+@import './components/reflection-menu';

@@ -35,8 +35,8 @@ namespace Reflektionsappen.Controllers
                 return BadRequest(false);
             }
 
-            //var user = await userManager.FindByNameAsync(request.Email);
-            //var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+            var user = await userManager.FindByNameAsync(request.Email);
+            var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
             // TODO mail token
 
             return Ok(true);

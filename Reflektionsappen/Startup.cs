@@ -30,10 +30,16 @@ namespace Reflektionsappen
             services.AddDbContext<IdentityContext>();
 
             services.AddIdentityCore<ApplicationUser>(options => { });
+            var dataProtectionProviderType = typeof(DataProtectorTokenProvider<>).MakeGenericType(typeof(ApplicationUser));
+            var phoneNumberProviderType = typeof(PhoneNumberTokenProvider<>).MakeGenericType(typeof(ApplicationUser));
+            var emailTokenProviderType = typeof(EmailTokenProvider<>).MakeGenericType(typeof(ApplicationUser));
             new IdentityBuilder(typeof(ApplicationUser), typeof(IdentityRole), services)
                 .AddRoleManager<RoleManager<IdentityRole>>()
                 .AddSignInManager<SignInManager<ApplicationUser>>()
-                .AddEntityFrameworkStores<IdentityContext>();
+                .AddEntityFrameworkStores<IdentityContext>()
+                .AddTokenProvider(TokenOptions.DefaultProvider, dataProtectionProviderType)
+                .AddTokenProvider(TokenOptions.DefaultEmailProvider, emailTokenProviderType)
+                .AddTokenProvider(TokenOptions.DefaultPhoneProvider, phoneNumberProviderType);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

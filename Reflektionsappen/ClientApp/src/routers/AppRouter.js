@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, Switch, Route} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import Reflections from '../components/Reflections/Reflections';
+import ReflectionStart from '../components/Reflections/ReflectionStart';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 
@@ -20,7 +20,7 @@ const AppRouter=()=>(
     <div>
       <Switch>
         <Route exact path="/" component={LoginPage} />
-        <Route exact path="/reflections" component={Reflections} />
+        <Route exact path="/reflectionstart" component={ReflectionStart} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
